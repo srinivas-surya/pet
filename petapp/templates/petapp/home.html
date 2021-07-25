@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+<!D<DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
@@ -36,8 +36,8 @@
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
                         <label class="col-sm-2 col-form-label" for="policy">Policy Type:</label>
-                        <select class="form-control" name="policy" id="policy">
-                            <option value="Policy" selected="selected" disabled>Policy</option>
+                        <select required="required" class="form-control" name="policy" id="policy">
+                            <option value="" selected="selected" disabled >Policy</option>
                             <option value="Annual">Annual</option>
                             <option value="Lifetime">Lifetime</option>
                             <option value="Pre Existing">Pre Existing</option>
@@ -47,8 +47,8 @@
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
                         <label class="col-sm-2 col-form-label" for="species">Species:</label>
-                        <select class="form-control" id="species" name="species">
-                            <option value="Species" selected="selected" disabled>Species</option>
+                        <select required="required" class="form-control" id="species" name="species">
+                            <option value="" selected="selected" disabled>Species</option>
                             <option value="Dog">Dog</option>
                             <option value="Cat">Cat</option>
                         </select><br><br>
@@ -57,8 +57,8 @@
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
                         <label class="col-sm-2 col-form-label" for="age">Pet Age:</label>
-                        <select class="form-control" id="age" name="age">
-                            <option value="Age" selected="selected" disabled>Age</option>
+                        <select  required="required" class="form-control" id="age" name="age" >
+                            <option value="" selected="selected" disabled>Age</option>
                             <option value="0-5">0-5</option>
                             <option value="5-10">5-10</option>
                         </select><br><br>
@@ -67,8 +67,8 @@
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
                         <label class="col-sm-2 col-form-label" for="amount">Amount:</label>
-                        <select class="form-control" name="amount" id="amount">
-                            <option value="Amount" selected="selected" disabled>Amount</option>
+                        <select required="required" class="form-control" name="amount" id="amount">
+                            <option value="" selected="selected" disabled>Amount</option>
                             <option value="500">500</option>
                             <option value="1000">1000</option>
                             <option value="2000">2000</option>
@@ -78,8 +78,8 @@
                 <div class="form-inline">
                     <div class="col-md-12 form-group">
                         <label class="col-sm-2 col-form-label" for="variety">Breed Variety:</label>
-                        <select class="form-control" name="variety" id="variety">
-                            <option value="Variety" selected="selected" disabled>Variety</option>
+                        <select required="required" class="form-control" name="variety" id="variety">
+                            <option value="" selected="selected" disabled>Variety</option>
                         </select><br><br>
                     </div>
                 </div>
@@ -102,14 +102,16 @@ $species.change(function() {
 
 if ($(this).val() == "Dog") {
 $("select[name='variety'] option").remove();
-$("<option>POM</option>").appendTo($variety);
-$("<option>PUG</option>").appendTo($variety);
+$("<option value='' selected disabled>Variety</option>").appendTo($variety);
+$("<option value='POM'>POM</option>").appendTo($variety);
+$("<option value='PUG'>PUG</option>").appendTo($variety);
 }
 
 if ($(this).val() == "Cat") {
 $("select[name='variety'] option").remove();
-$("<option>CAT1</option>").appendTo($variety);
-$("<option>CAT2</option>").appendTo($variety);
+$("<option value='' selected disabled>Variety</option>").appendTo($variety);
+$("<option value='CAT1'>CAT1</option>").appendTo($variety);
+$("<option value='CAT2'>CAT2</option>").appendTo($variety);
 }
 
 });
